@@ -121,9 +121,6 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
-let mapleader = ','
-
-
 " NerdTree {
     if isdirectory(expand("~/.vim/bundle/nerdtree"))
       map <C-e> :NERDTreeToggle<CR>
