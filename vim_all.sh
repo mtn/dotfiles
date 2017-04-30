@@ -10,4 +10,7 @@ else
     echo "Already installed!"
 fi
 
+echo "Linking vimrc..."
+ln -sf $HOME/dotfiles/vimrc $HOME/.vimrc
+
 echo "Done!"

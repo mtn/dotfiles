@@ -11,7 +11,9 @@
       call dein#add('tpope/vim-commentary')
       call dein#add('vim-syntastic/syntastic')
       call dein#add('altercation/vim-colors-solarized')
+      call dein#add('Shougo/vimproc.vim',{'build' : 'make'})
       call dein#add('tpope/vim-fugitive')
+      call dein#add('eagletmt/ghcmod-vim')
 
       call dein#source('vim-colors-solarized')
       call dein#end()
