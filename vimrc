@@ -7,13 +7,19 @@
       call dein#add('~/.vim/bundle/dein.vim//repos/github.com/Shougo/dein.vim')
 
       " Plugins, etc.:
-      call dein#add('scrooloose/nerdtree') 
+      call dein#add('scrooloose/nerdtree')
       call dein#add('tpope/vim-commentary')
       call dein#add('vim-syntastic/syntastic')
       call dein#add('altercation/vim-colors-solarized')
       call dein#add('Shougo/vimproc.vim',{'build' : 'make'})
       call dein#add('tpope/vim-fugitive')
       call dein#add('eagletmt/ghcmod-vim')
+      call dein#add('Valloric/YouCompleteMe',{'build': './install.py'})
+      call dein#add('vim-scripts/restore_view.vim')
+      call dein#add('mhinz/vim-signify')
+      call dein#add('Xuyuanp/nerdtree-git-plugin')
+      call dein#add('vim-airline/vim-airline')
+      call dein#add('ap/vim-css-color')
 
       call dein#source('vim-colors-solarized')
       call dein#end()
@@ -34,12 +40,6 @@ set background=dark
 set mousehide
 set showmode
 
-set backup                  " Backups are nice ...
-set undofile                " So is persistent undo ...
-set undodir="$HOME/.VIM_UNDO_FILES"
-set undolevels=1000         " Maximum number of changes that can be undone
-set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
-
 set cursorline
 set colorcolumn=90
 set number
@@ -52,7 +52,7 @@ set hlsearch
 set incsearch                   " Find as you type search
 nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
 
-set virtualedit=onemore 
+set virtualedit=onemore
 set spell
 set iskeyword-=.
 set iskeyword-=#
@@ -87,7 +87,7 @@ set softtabstop=4
 set nojoinspaces
 set autoindent
 
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+let g:ycm_show_diagnostics_ui = 0
 autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 " Workaround broken colour highlighting in Haskell
 autocmd FileType haskell,rust setlocal nospell
@@ -127,7 +127,7 @@ let mapleader = ','
 " NerdTree {
     if isdirectory(expand("~/.vim/bundle/nerdtree"))
       map <C-e> :NERDTreeToggle<CR>
-      
+
       let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
       let NERDTreeShowHidden=1
       let NERDTreeQuitOnOpen=1
