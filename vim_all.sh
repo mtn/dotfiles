@@ -1,6 +1,14 @@
 #!/bin/bash
 
-echo "Checking for dei installationn"
+cd $HOME
+if [ ! -e $HOME/dotfiles ]
+then
+    echo "Overwriting local dotfiles repository!"
+    rm -rf dotfiles
+else
+git clone https://github.com/mtn/dotfiles.git 
+
+echo "Checking for dein installation"
 if [ ! -e  $HOME/.vim/bundle/dein.vim ]
 then
     echo "Installing dein"
@@ -11,6 +19,14 @@ else
 fi
 
 echo "Linking vimrc..."
-ln -sf $HOME/dotfiles/vimrc $HOME/.vimrc
+if [ ! -e $HOME/.vimrc ]
+then
+    echo "Backing up old vimrc to ~/.vimrc.old..."
+    mv $HOME/.vimrc $HOME/.vimrc.old
+    echo "Backed up successfully!"
+fi
 
-echo "Done!"
+ln -s $HOME/dotfiles/vimrc $HOME/.vimrc
+
+echo "Done! First run will take awhile."
+
