@@ -5,7 +5,7 @@ if [ ! -e $HOME/dotfiles ]
 then
     echo "Overwriting local dotfiles repository!"
     rm -rf dotfiles
-else
+fi
 git clone https://github.com/mtn/dotfiles.git 
 
 echo "Checking for dein installation"
