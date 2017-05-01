@@ -19,6 +19,7 @@
       call dein#add('mhinz/vim-signify')
       call dein#add('Xuyuanp/nerdtree-git-plugin')
       call dein#add('vim-airline/vim-airline')
+      call dein#add('vim-airline/vim-airline-themes')
       call dein#add('ap/vim-css-color')
 
       call dein#source('vim-colors-solarized')
@@ -103,9 +104,9 @@ if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"
     color solarized
 endif
 
-" highlight clear SignColumn      " SignColumn should match background
+highlight clear SignColumn      " SignColumn should match background
 
- if has('cmdline_info')
+if has('cmdline_info')
     set ruler                   " Show the ruler
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
     set showcmd                 " Show partial commands in status line and
@@ -129,6 +130,16 @@ endif
       let NERDTreeShowHidden=1
       let NERDTreeQuitOnOpen=1
       let NERDTreeShowBookmarks=1
+    endif
+" }
+
+" vim-airline {
+    if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
+      if !exists('g:airline_theme')
+        let g:airline_theme = 'solarized'
+      endif
+      let g:airline_left_sep='›'  " Slightly fancier than '>'
+      let g:airline_right_sep='‹' " Slightly fancier than '<'
     endif
 " }
 

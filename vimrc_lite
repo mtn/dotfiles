@@ -10,7 +10,7 @@ set linespace=0
 set showmatch
 
 set hlsearch
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
 
 set virtualedit=onemore 
 set spell
