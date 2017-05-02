@@ -122,6 +122,10 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
+if has('gui_running')
+    set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
+endif
+
 " NerdTree {
     if isdirectory(expand("~/.vim/bundle/nerdtree"))
       map <C-e> :NERDTreeToggle<CR>
@@ -138,8 +142,7 @@ endif
       if !exists('g:airline_theme')
         let g:airline_theme = 'solarized'
       endif
-      let g:airline_left_sep='›'  " Slightly fancier than '>'
-      let g:airline_right_sep='‹' " Slightly fancier than '<'
+      let g:airline_powerline_fonts = 1
     endif
 " }
 
