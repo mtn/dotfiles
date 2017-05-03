@@ -20,7 +20,8 @@
       call dein#add('Xuyuanp/nerdtree-git-plugin')
       call dein#add('vim-airline/vim-airline')
       call dein#add('vim-airline/vim-airline-themes')
-      call dein#add('ap/vim-css-color')
+      call dein#add('jiangmiao/auto-pairs')
+      call dein#add('tpope/vim-surround')
 
       call dein#source('vim-colors-solarized')
       call dein#end()
