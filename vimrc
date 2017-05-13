@@ -13,7 +13,6 @@
       call dein#add('altercation/vim-colors-solarized')
       call dein#add('Shougo/vimproc.vim',{'build' : 'make'})
       call dein#add('tpope/vim-fugitive')
-      call dein#add('eagletmt/ghcmod-vim')
       call dein#add('Valloric/YouCompleteMe',{'build': './install.py'})
       call dein#add('vim-scripts/restore_view.vim')
       call dein#add('mhinz/vim-signify')
@@ -22,6 +21,9 @@
       call dein#add('vim-airline/vim-airline-themes')
       call dein#add('jiangmiao/auto-pairs')
       call dein#add('tpope/vim-surround')
+
+      call dein#add('eagletmt/ghcmod-vim')
+      call dein#add('rust-lang/rust.vim')
 
       call dein#source('vim-colors-solarized')
       call dein#end()
@@ -145,5 +147,9 @@ endif
       endif
       let g:airline_powerline_fonts = 1
     endif
+" }
+
+" rust {
+    let g:syntastic_rust_checkers = ['rustc']
 " }
 
