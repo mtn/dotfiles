@@ -7,7 +7,7 @@ export ZSH=/Users/michaelnoronha/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="geoffgarside"
 
 DISABLE_AUTO_UPDATE="true"
 
@@ -27,6 +27,12 @@ setopt EXTENDED_HISTORY
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+alias workspace='cd $HOME/Documents/workspace'
+alias dotfiles='cd $HOME/dotfiles'
+alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
+alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
+alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
