@@ -73,6 +73,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable
+set list
 set listchars=trail:•,tab:›\ ,extends:#,nbsp:. " Whitespace, etc.
 if has('clipboard')
     if has('unnamedplus')  " When possible use + register for copy-paste
