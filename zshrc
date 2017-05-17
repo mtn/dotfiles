@@ -34,8 +34,7 @@ alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
 alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 
-# redefine prompt_context for hiding user@hostname
-prompt_context () { }
+source /usr/local/bin/virtualenvwrapper.sh
 
 set -o vi
 
