@@ -154,3 +154,18 @@ endif
     let g:syntastic_rust_checkers = ['rustc']
 " }
 
+" Persistent Undo {
+    let vimDir = '$HOME/.vim'
+    let &runtimepath.=','.vimDir
+
+    " Keep undo history across sessions by storing it in a file
+    if has('persistent_undo')
+        let undoDir = expand(vimDir . '/undodir')
+        " Create dirs
+        call system('mkdir ' . vimDir)
+        call system('mkdir ' . undoDir)
+        let &undodir = undoDir
+        set undofile
+    endif
+" }
+
