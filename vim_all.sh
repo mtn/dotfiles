@@ -19,7 +19,7 @@ else
 fi
 
 echo "Linking vimrc..."
-if [ ! -e $HOME/.vimrc ]
+if [ -e $HOME/.vimrc ]
 then
     echo "Backing up old vimrc to ~/.vimrc.old..."
     mv $HOME/.vimrc $HOME/.vimrc.old
