@@ -15,6 +15,7 @@ DISABLE_AUTO_UPDATE="true"
 CASE_SENSITIVE="true"
 
 export EDITOR='vim'
+export PAGER='less'
 
 #set history size
 #save history after logout
