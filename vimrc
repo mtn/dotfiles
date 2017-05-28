@@ -39,7 +39,7 @@
 " }
 
 scriptencoding utf-8
-set shell=/bin/sh
+set shell=/bin/zsh
 set background=dark
 set mousehide
 set showmode
@@ -101,7 +101,7 @@ set splitright
 set splitbelow
 
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-    let g:solarized_termcolors=256
+    let g:solarized_termcolors=16777216
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
