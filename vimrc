@@ -21,6 +21,7 @@
       call dein#add('vim-airline/vim-airline-themes')
       call dein#add('jiangmiao/auto-pairs')
       call dein#add('tpope/vim-surround')
+      call dein#add('dhruvasagar/vim-table-mode')
 
       call dein#add('eagletmt/ghcmod-vim')
       call dein#add('rust-lang/rust.vim')
@@ -91,6 +92,8 @@ set tabstop=4
 set softtabstop=4
 set nojoinspaces
 set autoindent
+
+let mapleader = ','
 
 let g:ycm_show_diagnostics_ui = 0
 autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
