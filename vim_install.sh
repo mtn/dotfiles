@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd $HOME
-if [ ! -e $HOME/dotfiles ]
+if [ -e $HOME/dotfiles ]
 then
     echo "Overwriting local dotfiles repository!"
     rm -rf dotfiles
