@@ -22,6 +22,7 @@
       call dein#add('jiangmiao/auto-pairs')
       call dein#add('tpope/vim-surround')
       call dein#add('dhruvasagar/vim-table-mode')
+      call dein#add('easymotion/vim-easymotion')
 
       call dein#add('eagletmt/ghcmod-vim')
       call dein#add('rust-lang/rust.vim')
@@ -102,6 +103,12 @@ autocmd FileType haskell,rust setlocal nospell
 
 set splitright
 set splitbelow
+
+""Dynamically resize active window
+set winwidth=104
+set winheight=5
+set winminheight=5
+set winheight=999
 
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
     let g:solarized_termcolors=16777216
