@@ -29,12 +29,16 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+alias cl='clear'
+
 alias wo='cd $HOME/Documents/workspace'
 alias woc='cd $HOME/Documents/workspace/c'
 alias woru='cd $HOME/Documents/workspace/rust'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
-alias dots='cd $HOME/dotfiles'
+alias dot='cd $HOME/dotfiles'
+alias zshrc='cd $HOME/dotfiles && vim zshrc'
+alias vimrc='cd $HOME/dotfiles && vim vimrc'
 alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
 alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'

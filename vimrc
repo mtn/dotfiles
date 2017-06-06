@@ -140,6 +140,21 @@ if has('gui_running')
     set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
 endif
 
+"
+" Trailing Whitespace {
+    function TrimSpaces()
+      if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\s\+$//e
+        normal 'yz<CR>
+        normal `z
+      endif
+    endfunction
+
+    command -bar -nargs=0 TrimSpaces <line1>,<line2>call TrimSpaces()
+" }
+
 " NerdTree {
     if isdirectory(expand("~/.vim/bundle/nerdtree"))
       map <C-e> :NERDTreeToggle<CR>
@@ -157,6 +172,7 @@ endif
         let g:airline_theme = 'solarized'
       endif
       let g:airline_powerline_fonts = 1
+      let g:airline#extensions#tabline#enabled = 1
     endif
 " }
 
