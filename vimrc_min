@@ -1,0 +1,32 @@
+scriptencoding utf-8
+set background=dark
+set showmode
+
+set cursorline
+set colorcolumn=90
+set number
+set relativenumber
+set linespace=0
+set showmatch
+
+set hlsearch
+nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
+
+set virtualedit=onemore
+set spell
+set iskeyword-=.
+set iskeyword-=#
+set iskeyword-=-
+
+set hidden
+set history=1000
+
+set shiftwidth=4
+set expandtab
+set tabstop=4
+set softtabstop=4
+set nojoinspaces
+
+set splitright
+set splitbelow
+
