@@ -110,6 +110,9 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
+map <leader>a :bp<cr>
+map <leader>f :bn<cr>
+
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
     let g:solarized_termcolors=16777216
     let g:solarized_termtrans=1
@@ -140,7 +143,6 @@ if has('gui_running')
     set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
 endif
 
-"
 " Trailing Whitespace {
     function TrimSpaces()
       if !&binary && &filetype != 'diff'
