@@ -178,8 +178,9 @@ endif
     endif
 " }
 
-" rust {
+" Syntastic Checkers {
     let g:syntastic_rust_checkers = ['rustc']
+    let g:syntastic_javascript_checkers = ['jshint', 'jslint']
 " }
 
 " Persistent Undo {
