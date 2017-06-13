@@ -24,7 +24,6 @@
       call dein#add('dhruvasagar/vim-table-mode')
       call dein#add('easymotion/vim-easymotion')
 
-      call dein#add('eagletmt/ghcmod-vim')
       call dein#add('rust-lang/rust.vim')
 
       call dein#source('vim-colors-solarized')
@@ -110,7 +109,7 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
-map <leader>a :bp<cr>
+map <leader>d :bp<cr>
 map <leader>f :bn<cr>
 
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
@@ -181,6 +180,7 @@ endif
 " Syntastic Checkers {
     let g:syntastic_rust_checkers = ['rustc']
     let g:syntastic_javascript_checkers = ['jshint', 'jslint']
+    let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " }
 
 " Persistent Undo {
