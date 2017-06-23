@@ -179,7 +179,7 @@ endif
 
 " Syntastic Checkers {
     let g:syntastic_rust_checkers = ['rustc']
-    let g:syntastic_javascript_checkers = ['jshint', 'jslint']
+    let g:syntastic_javascript_checkers = ['jshint', 'eslint', 'jslint']
     let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " }
 

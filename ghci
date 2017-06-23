@@ -1,0 +1,5 @@
+-- Show loaded modules in window title and use a green "λ>" as prompt.
+-- Subsequent lines of multi-line commands shall begin with " |".
+:set prompt  "\SOH\ESC]0;GHCi: %s\BEL\ESC[32;1m\STXλ>\SOH\ESC[0m\STX "
+:set prompt2                    "\SOH\ESC[32;1m\STX |\SOH\ESC[0m\STX "
+
