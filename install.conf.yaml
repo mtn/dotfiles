@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.vimrc: vimrc
+    ~/.jshintrc: jshintrc
+    ~/.zshrc: zshrc
+    ~/.ghci: ghci
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
