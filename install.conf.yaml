@@ -10,6 +10,7 @@
     ~/.jshintrc: jshintrc
     ~/.zshrc: zshrc
     ~/.ghci: ghci
+    ~/.gitconfig: gitconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

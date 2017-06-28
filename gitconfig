@@ -1,0 +1,15 @@
+[user]
+	name = Michael Noronha
+	email = michaeltnoronha@gmail.com
+	signingkey = 7BC372D370BDFA4CE9C8526130D1E42F06D8A385
+
+[alias]
+    st = status
+    co = commit -m
+    al = add -A
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true
+[core]
+	editor = vim
