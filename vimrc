@@ -91,6 +91,7 @@ set tabstop=4
 set softtabstop=4
 set nojoinspaces
 set autoindent
+set nospell
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
