@@ -118,7 +118,7 @@ map <leader>f :bn<cr>
 
 " Alduin {
     let g:alduin_termcolors=16777216
-    let g:alduin_Contract_Vampirism = 1
+    " let g:alduin_Contract_Vampirism = 1
     color alduin
 " }
 
@@ -172,7 +172,7 @@ endif
 " vim-airline {
     if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
       if !exists('g:airline_theme')
-        let g:airline_theme = 'solarized'
+        let g:airline_theme = 'alduin'
       endif
       let g:airline_powerline_fonts = 1
       let g:airline#extensions#tabline#enabled = 1
