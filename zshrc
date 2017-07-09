@@ -35,6 +35,7 @@ alias cl='clear'
 
 alias wo='cd $HOME/Documents/workspace'
 alias woc='cd $HOME/Documents/workspace/c'
+alias wocp='cd $HOME/Documents/workspace/cpp'
 alias woru='cd $HOME/Documents/workspace/rust'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'

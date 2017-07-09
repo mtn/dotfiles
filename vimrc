@@ -23,10 +23,10 @@
       call dein#add('tpope/vim-surround')
       call dein#add('dhruvasagar/vim-table-mode')
       call dein#add('easymotion/vim-easymotion')
+      call dein#add('AlessandroYorba/Alduin')
 
       call dein#add('rust-lang/rust.vim')
 
-      call dein#source('vim-colors-solarized')
       call dein#end()
       call dein#save_state()
     endif
@@ -58,7 +58,6 @@ set incsearch                   " Find as you type search
 nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
 
 set virtualedit=onemore
-set spell
 set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
@@ -93,12 +92,17 @@ set softtabstop=4
 set nojoinspaces
 set autoindent
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 let mapleader = ','
 
 let g:ycm_show_diagnostics_ui = 0
 autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 " Workaround broken colour highlighting in Haskell
-autocmd FileType haskell,rust setlocal nospell
+autocmd FileType latex,tex,md,markdown setlocal spell
 
 set splitright
 set splitbelow
@@ -112,13 +116,11 @@ set winheight=999
 map <leader>d :bp<cr>
 map <leader>f :bn<cr>
 
-if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-    let g:solarized_termcolors=16777216
-    let g:solarized_termtrans=1
-    let g:solarized_contrast="normal"
-    let g:solarized_visibility="normal"
-    color solarized
-endif
+" Alduin {
+    let g:alduin_termcolors=16777216
+    let g:alduin_Contract_Vampirism = 1
+    color alduin
+" }
 
 highlight clear SignColumn      " SignColumn should match background
 

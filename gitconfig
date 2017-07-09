@@ -7,6 +7,7 @@
     st = status
     co = commit -m
     al = add -A
+    cl = clone
 [gpg]
 	program = /usr/local/bin/gpg
 [commit]
