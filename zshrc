@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/michaelnoronha/.oh-my-zsh
 
-export PATH="/Users/michaelnoronha/.local/bin:$HOME/Library/Haskell/bin:$PATH"
+export PATH="/Users/michaelnoronha/.local/bin:$HOME/Library/Haskell/bin:$HOME/.cargo/bin:$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -37,6 +37,7 @@ alias wo='cd $HOME/Documents/workspace'
 alias woc='cd $HOME/Documents/workspace/c'
 alias wocp='cd $HOME/Documents/workspace/cpp'
 alias woru='cd $HOME/Documents/workspace/rust'
+alias worb='cd $HOME/Documents/workspace/ruby'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
 alias dot='cd $HOME/dotfiles'

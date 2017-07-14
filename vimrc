@@ -103,7 +103,7 @@ let mapleader = ','
 let g:ycm_show_diagnostics_ui = 0
 autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 " Workaround broken colour highlighting in Haskell
-autocmd FileType latex,tex,md,markdown setlocal spell
+autocmd FileType latex,tex,md,markdown,txt,text setlocal spell
 
 set splitright
 set splitbelow
