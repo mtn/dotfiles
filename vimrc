@@ -9,10 +9,12 @@
       " Plugins, etc.:
       call dein#add('scrooloose/nerdtree')
       call dein#add('tpope/vim-commentary')
+      call dein#add('tpope/vim-fugitive')
+      call dein#add('tpope/vim-surround')
+      call dein#add('tpope/tpope-vim-abolish')
       call dein#add('vim-syntastic/syntastic')
       call dein#add('altercation/vim-colors-solarized')
       call dein#add('Shougo/vimproc.vim',{'build' : 'make'})
-      call dein#add('tpope/vim-fugitive')
       call dein#add('Valloric/YouCompleteMe',{'build': './install.py'})
       call dein#add('vim-scripts/restore_view.vim')
       call dein#add('mhinz/vim-signify')
@@ -20,7 +22,6 @@
       call dein#add('vim-airline/vim-airline')
       call dein#add('vim-airline/vim-airline-themes')
       call dein#add('jiangmiao/auto-pairs')
-      call dein#add('tpope/vim-surround')
       call dein#add('dhruvasagar/vim-table-mode')
       call dein#add('easymotion/vim-easymotion')
       call dein#add('AlessandroYorba/Alduin')
@@ -102,7 +103,6 @@ let mapleader = ','
 
 let g:ycm_show_diagnostics_ui = 0
 autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
-" Workaround broken colour highlighting in Haskell
 autocmd FileType latex,tex,md,markdown,txt,text setlocal spell
 
 set splitright
@@ -119,7 +119,7 @@ map <leader>f :bn<cr>
 
 " Alduin {
     let g:alduin_termcolors=16777216
-    " let g:alduin_Contract_Vampirism = 1
+    let g:alduin_Contract_Vampirism = 1
     color alduin
 " }
 
@@ -162,6 +162,7 @@ endif
 " NerdTree {
     if isdirectory(expand("~/.vim/bundle/nerdtree"))
       map <C-e> :NERDTreeToggle<CR>
+      map <leader>e :NERDTreeToggle<cr>
 
       let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
       let NERDTreeShowHidden=1
