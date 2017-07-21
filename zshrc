@@ -14,7 +14,7 @@ ZSH_THEME="geoffgarside"
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 export EDITOR='vim'
 export PAGER='less'
