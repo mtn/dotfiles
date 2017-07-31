@@ -41,12 +41,16 @@ alias worb='cd $HOME/Documents/workspace/ruby'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
 alias woml='cd $HOME/Documents/workspace/ml'
+
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc'
 alias vimrc='vim $HOME/dotfiles/vimrc'
+
 alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
 alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'
+
+alias mlog='vim $HOME/Documents/workspace/log.txt'
 
 source /usr/local/bin/virtualenvwrapper.sh
 

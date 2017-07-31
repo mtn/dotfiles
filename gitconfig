@@ -8,6 +8,7 @@
     co = commit -m
     al = add -A
     cl = clone
+    rh = reset --hard
 [gpg]
 	program = /usr/local/bin/gpg
 [commit]
