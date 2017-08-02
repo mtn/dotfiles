@@ -57,6 +57,9 @@ set showmatch
 set hlsearch
 set incsearch                   " Find as you type search
 nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
+map ; :
+noremap ;; ;
+
 
 set virtualedit=onemore
 set iskeyword-=.
@@ -183,7 +186,7 @@ endif
 
 " Syntastic Checkers {
     let g:syntastic_rust_checkers = ['rustc']
-    let g:syntastic_javascript_checkers = ['jshint', 'eslint', 'jslint']
+    let g:syntastic_javascript_checkers = ['jshint']
     let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " }
 
