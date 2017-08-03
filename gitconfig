@@ -9,6 +9,8 @@
     al = add -A
     cl = clone
     rh = reset --hard
+    ch = checkout
+    chb = checkout -b
 [gpg]
 	program = /usr/local/bin/gpg
 [commit]

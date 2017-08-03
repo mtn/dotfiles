@@ -52,6 +52,9 @@ alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 
 alias mlog='vim $HOME/Documents/workspace/log.txt'
 
+alias gdi='git diff'
+alias gdic='git diff --cached'
+
 source /usr/local/bin/virtualenvwrapper.sh
 
 set -o vi
