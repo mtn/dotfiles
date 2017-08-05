@@ -6,7 +6,7 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
     ~/.jshintrc: jshintrc
     ~/.zshrc: zshrc
     ~/.ghci: ghci
