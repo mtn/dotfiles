@@ -44,7 +44,7 @@ alias woml='cd $HOME/Documents/workspace/ml'
 
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc'
-alias vimrc='vim $HOME/dotfiles/vimrc'
+alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 
 alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
 alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
