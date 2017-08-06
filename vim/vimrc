@@ -12,7 +12,7 @@
       call dein#add('tpope/vim-fugitive')
       call dein#add('tpope/vim-surround')
       call dein#add('tpope/tpope-vim-abolish')
-      call dein#add('vim-syntastic/syntastic')
+      call dein#add('https://github.com/w0rp/ale')
       call dein#add('altercation/vim-colors-solarized')
       call dein#add('Shougo/vimproc.vim',{'build' : 'make'})
       call dein#add('Valloric/YouCompleteMe',{'build': './install.py'})
@@ -41,7 +41,7 @@
 " }
 
 scriptencoding utf-8
-set shell=/bin/zsh
+set shell=$SHELL
 set background=dark
 set mousehide
 set showmode
@@ -57,8 +57,9 @@ set showmatch
 set hlsearch
 set incsearch                   " Find as you type search
 nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
-map ; :
+noremap ; :
 noremap ;; ;
+
 
 
 set virtualedit=onemore
@@ -67,10 +68,11 @@ set iskeyword-=#
 set iskeyword-=-
 
 set hidden
-set history=1000
+set history=10000
 set backspace=indent,eol,start
 set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
+set infercase
 set wildmenu                    " Show list instead of just completing
 set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
@@ -78,6 +80,11 @@ set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable
 set list
+
+if has('mac')
+    set wildignorecase
+endif
+
 set listchars=trail:•,tab:›\ ,extends:#,nbsp:. " Whitespace, etc.
 if has('clipboard')
     if has('unnamedplus')  " When possible use + register for copy-paste
@@ -117,8 +124,10 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
-map <leader>d :bp<cr>
-map <leader>f :bn<cr>
+nnoremap <leader>d :bp<cr>
+nnoremap <leader>f :bn<cr>
+
+set termguicolors
 
 " Alduin {
     let g:alduin_termcolors=16777216
@@ -159,7 +168,7 @@ endif
       endif
     endfunction
 
-    command -bar -nargs=0 TrimSpaces <line1>,<line2>call TrimSpaces()
+    command! -bar -nargs=0 TrimSpaces <line1>,<line2>call TrimSpaces()
 " }
 
 " NerdTree {

@@ -11,7 +11,7 @@
     ~/.zshrc: zshrc
     ~/.ghci: ghci
     ~/.gitconfig: gitconfig
-    ~/.eslintrc.yaml : eslintrc
+    ~/.eslintrc.json: eslintrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
