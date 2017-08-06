@@ -130,7 +130,6 @@ nnoremap <leader>f :bn<cr>
 set termguicolors
 
 " Alduin {
-    let g:alduin_termcolors=16777216
     let g:alduin_Contract_Vampirism = 1
     color alduin
 " }

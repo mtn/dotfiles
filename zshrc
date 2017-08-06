@@ -43,7 +43,7 @@ alias wopy='cd $HOME/Documents/workspace/python'
 alias woml='cd $HOME/Documents/workspace/ml'
 
 alias dot='cd $HOME/dotfiles'
-alias zshrc='vim $HOME/dotfiles/zshrc'
+alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 
 alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
