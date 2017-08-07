@@ -11,6 +11,7 @@
     rh = reset --hard
     ch = checkout
     chb = checkout -b
+    p = pull
 [gpg]
 	program = /usr/local/bin/gpg
 [commit]

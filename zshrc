@@ -55,6 +55,8 @@ alias mlog='vim $HOME/Documents/workspace/log.txt'
 alias gid='git diff'
 alias gidc='git diff --cached'
 
+alias q='exit'
+
 source /usr/local/bin/virtualenvwrapper.sh
 
 set -o vi
