@@ -8,13 +8,12 @@ then
 fi
 git clone https://github.com/mtn/dotfiles.git 
 
-echo "Checking for dein installation"
-if [ ! -e  $HOME/.vim/bundle/dein.vim ]
+echo "Checking for vim-plug installation"
+if [ ! -e  $HOME/.vim/autoload/plug.vim ]
 then
-    echo "Installing dein"
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-    sh ./installer.sh $HOME/.vim/bundle/dein.vim
-else
+    echo "Installing vim-plug"
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimelse
     echo "Already installed!"
 fi
 
