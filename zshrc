@@ -56,6 +56,7 @@ alias gid='git diff'
 alias gidc='git diff --cached'
 
 alias q='exit'
+alias e='vim'
 
 source /usr/local/bin/virtualenvwrapper.sh
 

@@ -1,43 +1,30 @@
 " Dein {
-    set runtimepath+=~/.vim/bundle/dein.vim//repos/github.com/Shougo/dein.vim
-
-    if dein#load_state('~/.vim/bundle/dein.vim/')
-      call dein#begin('~/.vim/bundle/dein.vim/')
-
-      call dein#add('~/.vim/bundle/dein.vim//repos/github.com/Shougo/dein.vim')
+    call plug#begin('~/.vim/plugged')
 
       " Plugins, etc.:
-      call dein#add('scrooloose/nerdtree')
-      call dein#add('tpope/vim-commentary')
-      call dein#add('tpope/vim-fugitive')
-      call dein#add('tpope/vim-surround')
-      call dein#add('tpope/tpope-vim-abolish')
-      call dein#add('https://github.com/w0rp/ale')
-      call dein#add('altercation/vim-colors-solarized')
-      call dein#add('Shougo/vimproc.vim',{'build' : 'make'})
-      call dein#add('Valloric/YouCompleteMe',{'build': './install.py'})
-      call dein#add('vim-scripts/restore_view.vim')
-      call dein#add('mhinz/vim-signify')
-      call dein#add('Xuyuanp/nerdtree-git-plugin')
-      call dein#add('vim-airline/vim-airline')
-      call dein#add('vim-airline/vim-airline-themes')
-      call dein#add('jiangmiao/auto-pairs')
-      call dein#add('dhruvasagar/vim-table-mode')
-      call dein#add('easymotion/vim-easymotion')
-      call dein#add('AlessandroYorba/Alduin')
+      Plug 'scrooloose/nerdtree'
+      Plug 'tpope/vim-commentary'
+      Plug 'tpope/vim-fugitive'
+      Plug 'tpope/vim-surround'
+      Plug 'tpope/vim-abolish'
+      Plug 'w0rp/ale'
+      Plug 'Shougo/vimproc.vim', {'build' : 'make'}
+      Plug 'Valloric/YouCompleteMe', {'build': './install.py'}
+      Plug 'vim-scripts/restore_view.vim'
+      Plug 'mhinz/vim-signify'
+      Plug 'Xuyuanp/nerdtree-git-plugin'
+      Plug 'vim-airline/vim-airline'
+      Plug 'vim-airline/vim-airline-themes'
+      Plug 'jiangmiao/auto-pairs'
+      Plug 'dhruvasagar/vim-table-mode'
+      Plug 'AlessandroYorba/Alduin'
 
-      call dein#add('rust-lang/rust.vim')
+      Plug 'rust-lang/rust.vim'
 
-      call dein#end()
-      call dein#save_state()
-    endif
+      call plug#end()
 
     filetype plugin indent on
     syntax enable
-
-    if dein#check_install()
-      call dein#install()
-    endif
 " }
 
 scriptencoding utf-8
@@ -200,7 +187,6 @@ endif
 " }
 
 " ale {
-    let g:ale_lint_on_text_changed = 'normal'
     let g:ale_lint_on_enter = 1
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
