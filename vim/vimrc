@@ -164,7 +164,7 @@ endif
 " }
 
 " NerdTree {
-    if isdirectory(expand("~/.vim/bundle/nerdtree"))
+    if isdirectory(expand("~/.vim/plugged/nerdtree"))
       noremap <C-e> :NERDTreeToggle<CR>
       noremap <leader>e :NERDTreeToggle<CR>
 
@@ -176,7 +176,7 @@ endif
 " }
 
 " vim-airline {
-    if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
+    if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
       if !exists('g:airline_theme')
         let g:airline_theme = 'alduin'
       endif
