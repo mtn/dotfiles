@@ -3,16 +3,15 @@
 
       " Plugins, etc.:
       Plug 'scrooloose/nerdtree'
+      Plug 'Xuyuanp/nerdtree-git-plugin'
       Plug 'tpope/vim-commentary'
       Plug 'tpope/vim-fugitive'
       Plug 'tpope/vim-surround'
       Plug 'tpope/vim-abolish'
       Plug 'w0rp/ale'
-      Plug 'Shougo/vimproc.vim', {'build' : 'make'}
-      Plug 'Valloric/YouCompleteMe', {'build': './install.py'}
+      " Plug 'Valloric/YouCompleteMe', {'build': './install.py'}
       Plug 'vim-scripts/restore_view.vim'
       Plug 'mhinz/vim-signify'
-      Plug 'Xuyuanp/nerdtree-git-plugin'
       Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
       Plug 'jiangmiao/auto-pairs'
@@ -46,7 +45,6 @@ set incsearch                   " Find as you type search
 nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
 noremap ; :
 noremap ;; ;
-
 
 
 set virtualedit=onemore
@@ -104,21 +102,21 @@ nnoremap <leader>h <C-W><C-H>
 
 nnoremap <leader>v <C-V>
 
-let g:ycm_show_diagnostics_ui = 0
-autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+nnoremap <leader>d :bp<cr>
+nnoremap <leader>f :bn<cr>
+
+" let g:ycm_show_diagnostics_ui = 0
+" autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType latex,tex,md,markdown,txt,text setlocal spell
 
 set splitright
 set splitbelow
 
-""Dynamically resize active window
+" Dynamically resize active window
 set winwidth=104
 set winheight=5
 set winminheight=5
 set winheight=999
-
-nnoremap <leader>d :bp<cr>
-nnoremap <leader>f :bn<cr>
 
 set termguicolors
 
@@ -164,27 +162,29 @@ endif
 " }
 
 " NerdTree {
-    if isdirectory(expand("~/.vim/plugged/nerdtree"))
-      noremap <C-e> :NERDTreeToggle<CR>
-      noremap <leader>e :NERDTreeToggle<CR>
+"     if isdirectory(expand("~/.vim/plugged/nerdtree"))
+"       noremap <C-e> :NERDTreeToggle<CR>
+"       noremap <leader>e :NERDTreeToggle<CR>
 
-      let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-      let NERDTreeShowHidden=1
-      let NERDTreeQuitOnOpen=1
-      let NERDTreeShowBookmarks=1
-    endif
+"       let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+"       let NERDTreeShowHidden=1
+"       let NERDTreeQuitOnOpen=1
+"       let NERDTreeShowBookmarks=1
+"     endif
 " }
 
 " vim-airline {
-    if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
-      if !exists('g:airline_theme')
-        let g:airline_theme = 'alduin'
+    if isdirectory(expand("~/.vim/plugged/vim-airline/"))
+      if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
+        if !exists('g:airline_theme')
+          let g:airline_theme = 'alduin'
+        endif
       endif
       let g:airline_powerline_fonts = 1
       let g:airline#extensions#tabline#enabled = 1
       let g:airline#extensions#ale#enabled = 1
     endif
-" }
+"  }
 
 " ale {
     let g:ale_lint_on_enter = 1

@@ -41,7 +41,7 @@ alias worb='cd $HOME/Documents/workspace/rust'
 alias worb='cd $HOME/Documents/workspace/ruby'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
-alias woml='cd $HOME/Documents/workspace/ml'
+alias wojs='cd $HOME/Documents/workspace/js'
 
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
@@ -60,6 +60,7 @@ alias q='exit'
 alias e='vim'
 
 source /usr/local/bin/virtualenvwrapper.sh
+export PIP_REQUIRE_VIRTUALENV=false
 
 set -o vi
 
