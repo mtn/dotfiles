@@ -113,12 +113,11 @@ set splitright
 set splitbelow
 
 " Dynamically resize active window
-set winwidth=104
-set winheight=5
-set winminheight=5
-set winheight=999
+" set winwidth=104
+" set winheight=5
+" set winminheight=5
+" set winheight=999
 
-set termguicolors
 
 " Alduin {
     let g:alduin_Contract_Vampirism = 1

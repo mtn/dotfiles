@@ -27,7 +27,7 @@ export HISTFILE=~/.zhistory
 #add timestamp for each entry
 setopt EXTENDED_HISTORY
 
-plugins=(git)
+plugins=(git zsh-directory-history zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,6 +52,7 @@ alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 
 alias mlog='vim $HOME/Documents/workspace/log.txt'
+alias todo='vim todo.txt'
 
 alias gid='git diff'
 alias gidc='git diff --cached'
@@ -64,3 +65,11 @@ export PIP_REQUIRE_VIRTUALENV=false
 
 set -o vi
 
+
+export NVM_DIR="/Users/michaelnoronha/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
