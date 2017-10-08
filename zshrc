@@ -54,6 +54,8 @@ alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 alias mlog='vim $HOME/Documents/workspace/log.txt'
 alias todo='vim todo.txt'
 
+alias mkt='pdflatex *.tex && open *.pdf'
+
 alias gid='git diff'
 alias gidc='git diff --cached'
 
@@ -73,3 +75,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"

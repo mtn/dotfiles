@@ -2,23 +2,20 @@
     call plug#begin('~/.vim/plugged')
 
       " Plugins, etc.:
-      Plug 'scrooloose/nerdtree'
-      Plug 'Xuyuanp/nerdtree-git-plugin'
       Plug 'tpope/vim-commentary'
       Plug 'tpope/vim-fugitive'
       Plug 'tpope/vim-surround'
       Plug 'tpope/vim-abolish'
       Plug 'w0rp/ale'
-      " Plug 'Valloric/YouCompleteMe', {'build': './install.py'}
       Plug 'vim-scripts/restore_view.vim'
       Plug 'mhinz/vim-signify'
       Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
       Plug 'jiangmiao/auto-pairs'
-      Plug 'dhruvasagar/vim-table-mode'
+      " Plug 'dhruvasagar/vim-table-mode'
       Plug 'AlessandroYorba/Alduin'
 
-      Plug 'rust-lang/rust.vim'
+      " Plug 'rust-lang/rust.vim'
 
       call plug#end()
 
@@ -32,10 +29,9 @@ set background=dark
 set mousehide
 set showmode
 
-set cursorline
 set colorcolumn=90
 set number
-set relativenumber
+" set relativenumber
 set linespace=0
 set smarttab
 set showmatch
@@ -158,18 +154,6 @@ endif
     endfunction
 
     command! -bar -nargs=0 TrimSpaces <line1>,<line2>call TrimSpaces()
-" }
-
-" NerdTree {
-"     if isdirectory(expand("~/.vim/plugged/nerdtree"))
-"       noremap <C-e> :NERDTreeToggle<CR>
-"       noremap <leader>e :NERDTreeToggle<CR>
-
-"       let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-"       let NERDTreeShowHidden=1
-"       let NERDTreeQuitOnOpen=1
-"       let NERDTreeShowBookmarks=1
-"     endif
 " }
 
 " vim-airline {
