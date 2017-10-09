@@ -9,8 +9,7 @@
       Plug 'w0rp/ale'
       Plug 'vim-scripts/restore_view.vim'
       Plug 'mhinz/vim-signify'
-      Plug 'vim-airline/vim-airline'
-      Plug 'vim-airline/vim-airline-themes'
+      Plug 'bling/vim-bufferline'
       Plug 'jiangmiao/auto-pairs'
       " Plug 'dhruvasagar/vim-table-mode'
       Plug 'AlessandroYorba/Alduin'
@@ -22,7 +21,7 @@
     filetype plugin indent on
     syntax enable
 " }
-
+"
 scriptencoding utf-8
 set shell=$SHELL
 set background=dark
@@ -31,7 +30,7 @@ set showmode
 
 set colorcolumn=90
 set number
-" set relativenumber
+set norelativenumber " else slow :(
 set linespace=0
 set smarttab
 set showmatch
@@ -101,22 +100,13 @@ nnoremap <leader>v <C-V>
 nnoremap <leader>d :bp<cr>
 nnoremap <leader>f :bn<cr>
 
-" let g:ycm_show_diagnostics_ui = 0
-" autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType latex,tex,md,markdown,txt,text setlocal spell
 
 set splitright
 set splitbelow
 
-" Dynamically resize active window
-" set winwidth=104
-" set winheight=5
-" set winminheight=5
-" set winheight=999
-
-
 " Alduin {
-    let g:alduin_Contract_Vampirism = 1
     color alduin
 " }
 
@@ -126,20 +116,6 @@ if has('cmdline_info')
     set ruler                   " Show the ruler
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
     set showcmd                 " Show partial commands in status line and
-endif
-
-if has('statusline')
-    set laststatus=2
-    set statusline=%<%f\                     " Filename
-    set statusline+=%w%h%m%r                 " Options
-    set statusline+=%{fugitive#statusline()} " Git Hotness
-    set statusline+=\ [%{&ff}/%Y]            " Filetype
-    set statusline+=\ [%{getcwd()}]          " Current dir
-    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-
-if has('gui_running')
-    set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
 endif
 
 " Trailing Whitespace {
@@ -156,24 +132,22 @@ endif
     command! -bar -nargs=0 TrimSpaces <line1>,<line2>call TrimSpaces()
 " }
 
-" vim-airline {
-    if isdirectory(expand("~/.vim/plugged/vim-airline/"))
-      if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
-        if !exists('g:airline_theme')
-          let g:airline_theme = 'alduin'
-        endif
-      endif
-      let g:airline_powerline_fonts = 1
-      let g:airline#extensions#tabline#enabled = 1
-      let g:airline#extensions#ale#enabled = 1
-    endif
-"  }
-
 " ale {
     let g:ale_lint_on_enter = 1
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
 " }
+
+
+if has('statusline')
+    set laststatus=2
+    set statusline=%<%f\                     " Filename
+    set statusline+=%w%h%m%r                 " Options
+    set statusline+=%{fugitive#statusline()} " Git Hotness
+    set statusline+=\ [%{&ff}/%Y]            " Filetype
+    set statusline+=\ [%{getcwd()}]          " Current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
 
 " Persistent Undo {
     let vimDir = '$HOME/.vim'
