@@ -9,7 +9,7 @@
       Plug 'w0rp/ale'
       Plug 'vim-scripts/restore_view.vim'
       Plug 'mhinz/vim-signify'
-      Plug 'bling/vim-bufferline'
+      Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
       " Plug 'dhruvasagar/vim-table-mode'
       Plug 'AlessandroYorba/Alduin'
@@ -40,7 +40,6 @@ set incsearch                   " Find as you type search
 nnoremap <silent> <Enter> :nohlsearch<Bar>:echo<CR>
 noremap ; :
 noremap ;; ;
-
 
 set virtualedit=onemore
 set iskeyword-=.
@@ -136,16 +135,13 @@ endif
     let g:ale_lint_on_enter = 1
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
+    let g:ale_linters = {'tex': [],}
 " }
-
 
 if has('statusline')
     set laststatus=2
     set statusline=%<%f\                     " Filename
     set statusline+=%w%h%m%r                 " Options
-    set statusline+=%{fugitive#statusline()} " Git Hotness
-    set statusline+=\ [%{&ff}/%Y]            " Filetype
-    set statusline+=\ [%{getcwd()}]          " Current dir
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
