@@ -54,13 +54,14 @@ alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 alias mlog='vim $HOME/Documents/workspace/log.txt'
 alias todo='vim todo.txt'
 
-alias mkt='pdflatex *.tex && open *.pdf'
+alias mkt='pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
 
 alias gid='git diff'
 alias gidc='git diff --cached'
 
 alias q='exit'
 alias e='vim'
+alias c='cat'
 
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_REQUIRE_VIRTUALENV=false
@@ -75,6 +76,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
