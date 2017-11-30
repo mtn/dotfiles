@@ -47,7 +47,6 @@ alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 
-alias cs154='cd $HOME/Documents/workspace/c/cs154/mnoronha-cs154-spr-17'
 alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 
@@ -82,3 +81,4 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export PATH="/usr/local/opt/qt/bin:$PATH"

@@ -2,18 +2,15 @@
     call plug#begin('~/.vim/plugged')
 
       Plug 'tpope/vim-commentary'
-      Plug 'tpope/vim-fugitive'
       Plug 'tpope/vim-surround'
       Plug 'tpope/vim-abolish'
       Plug 'w0rp/ale'
-      Plug 'vim-scripts/restore_view.vim'
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
-      " Plug 'dhruvasagar/vim-table-mode'
       Plug 'AlessandroYorba/Alduin'
+      Plug 'reedes/vim-pencil'
 
       Plug 'rust-lang/rust.vim'
-      Plug 'dleonard0/pony-vim-syntax'
       Plug 'elixir-editors/vim-elixir'
 
       call plug#end()
@@ -60,6 +57,10 @@ set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable
 set list
+
+let g:pencil#autoformat = 1
+let g:pencil#hardwrap = 1
+let g:pencil#textwidth = 80
 
 if has('mac')
     set wildignorecase
@@ -136,7 +137,7 @@ endif
     let g:ale_lint_on_enter = 0
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
-    let g:ale_linters = {'tex': [], 'haskell': [], 'html': []}
+    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc']}
 " }
 
 if has('statusline')
@@ -160,4 +161,13 @@ endif
         set undofile
     endif
 " }
+
+" Restore cursor position
+" {
+au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
+        \ execute("normal `\"") |
+    \ endif
+" }
+
 
