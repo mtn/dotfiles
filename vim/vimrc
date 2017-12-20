@@ -67,12 +67,16 @@ if has('mac')
 endif
 
 set listchars=trail:•,tab:›\ ,extends:#,nbsp:. " Whitespace, etc.
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
+" if has('clipboard')
+"     if has('unnamedplus')  " When possible use + register for copy-paste
+"         set clipboard=unnamed,unnamedplus
+"     else         " On mac and Windows, use * register for copy-paste
+"         set clipboard=unnamed
+"     endif
+" endif
+
+if $TMUX == ''
+    set clipboard+=unnamed,unnamedplus
 endif
 
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
@@ -137,7 +141,7 @@ endif
     let g:ale_lint_on_enter = 0
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
-    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc']}
+    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc'], 'python': ['pylint']}
 " }
 
 if has('statusline')

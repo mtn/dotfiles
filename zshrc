@@ -42,6 +42,7 @@ alias worb='cd $HOME/Documents/workspace/ruby'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
 alias wojs='cd $HOME/Documents/workspace/js'
+alias wola='cd $HOME/Documents/workspace/pl'
 
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
