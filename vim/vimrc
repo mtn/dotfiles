@@ -10,7 +10,6 @@
       Plug 'AlessandroYorba/Alduin'
       Plug 'reedes/vim-pencil'
 
-      Plug 'rust-lang/rust.vim'
       Plug 'elixir-editors/vim-elixir'
 
       call plug#end()
@@ -141,7 +140,8 @@ endif
     let g:ale_lint_on_enter = 0
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
-    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc'], 'python': ['pylint']}
+    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc'], 'python': ['pylint'], 'rust': ['rls']}
+    let g:ale_set_highlights = 0
 " }
 
 if has('statusline')

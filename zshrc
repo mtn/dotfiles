@@ -52,6 +52,7 @@ alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 
 alias mlog='vim $HOME/Documents/workspace/log.txt'
+alias ideas='vim $HOME/Documents/workspace/ideas.txt'
 alias todo='vim todo.txt'
 
 alias mkt='pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
@@ -83,3 +84,4 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="$HOME/Documents/workspace/python/mkgist:$PATH"
