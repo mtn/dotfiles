@@ -1,7 +1,7 @@
 [user]
-	name = Michael Noronha
-	email = michaeltnoronha@gmail.com
-	signingkey = 7BC372D370BDFA4CE9C8526130D1E42F06D8A385
+    name = Michael Noronha
+    email = michaeltnoronha@gmail.com
+    signingkey = 7BC372D370BDFA4CE9C8526130D1E42F06D8A385
 
 [alias]
     st = status
@@ -12,9 +12,11 @@
     ch = checkout
     chb = checkout -b
     p = pull
+    pu = push
+    l = log
 [gpg]
-	program = /usr/local/bin/gpg
+    program = /usr/local/bin/gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
 [core]
-	editor = vim
+    editor = vim

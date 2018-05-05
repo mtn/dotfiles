@@ -10,8 +10,6 @@
       Plug 'AlessandroYorba/Alduin'
       Plug 'reedes/vim-pencil'
 
-      Plug 'elixir-editors/vim-elixir'
-
       call plug#end()
 
     filetype plugin indent on
@@ -104,6 +102,8 @@ nnoremap <leader>v <C-V>
 nnoremap <leader>d :bp<cr>
 nnoremap <leader>f :bn<cr>
 
+set pastetoggle=<leader>p
+
 autocmd FileType puppet,yml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType latex,tex,md,markdown,txt,text setlocal spell
 
@@ -140,7 +140,7 @@ endif
     let g:ale_lint_on_enter = 0
     noremap <leader>r :ALENextWrap<CR>
     noremap <leader>t :ALEPreviousWrap<CR>
-    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc'], 'python': ['pylint'], 'rust': ['rls']}
+    let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc'], 'python': ['pylint']}
     let g:ale_set_highlights = 0
 " }
 
@@ -173,5 +173,3 @@ au BufReadPost *
         \ execute("normal `\"") |
     \ endif
 " }
-
-
