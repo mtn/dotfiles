@@ -47,6 +47,8 @@ alias wopy='cd $HOME/Documents/workspace/python'
 alias wojs='cd $HOME/Documents/workspace/js'
 alias wola='cd $HOME/Documents/workspace/pl'
 
+alias vimspell='vim $HOME/.vim/spell/en.utf-8.add'
+
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
@@ -60,7 +62,7 @@ alias mlog='vim $HOME/Documents/workspace/log.txt'
 alias ideas='vim $HOME/Documents/workspace/ideas.txt'
 alias todo='vim todo.txt'
 
-alias mkt='pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
+alias mkt='luatex*.tex && rm *.log && rm *.aux && open *.pdf'
 alias rip='echo "sad"'
 
 alias gid='git diff'
@@ -70,14 +72,12 @@ alias q='exit'
 alias e='vim'
 alias c='cat'
 
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/mkvenv
+source /usr/local/bin/workon
+source /usr/local/bin/rmvenv
 export PIP_REQUIRE_VIRTUALENV=false
 
 set -o vi
-
-
-export NVM_DIR="/Users/michaelnoronha/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -85,6 +85,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH="$HOME/Documents/workspace/python/mkgist:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
+export PATH="$HOME/go:$PATH"

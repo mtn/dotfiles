@@ -6,7 +6,8 @@
 [alias]
     st = status
     co = commit -m
-    al = add -A
+    al = add -u
+    aa = add -A
     cl = clone
     rh = reset --hard
     ch = checkout
