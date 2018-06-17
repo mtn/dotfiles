@@ -40,12 +40,10 @@ alias wo='cd $HOME/Documents/workspace'
 alias woc='cd $HOME/Documents/workspace/c'
 alias wocp='cd $HOME/Documents/workspace/cpp'
 alias woru='cd $HOME/Documents/workspace/rust'
-alias worb='cd $HOME/Documents/workspace/rust'
 alias worb='cd $HOME/Documents/workspace/ruby'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
 alias wojs='cd $HOME/Documents/workspace/js'
-alias wola='cd $HOME/Documents/workspace/pl'
 
 alias vimspell='vim $HOME/.vim/spell/en.utf-8.add'
 
@@ -62,7 +60,7 @@ alias mlog='vim $HOME/Documents/workspace/log.txt'
 alias ideas='vim $HOME/Documents/workspace/ideas.txt'
 alias todo='vim todo.txt'
 
-alias mkt='luatex*.tex && rm *.log && rm *.aux && open *.pdf'
+alias mkt='pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
 alias rip='echo "sad"'
 
 alias gid='git diff'
