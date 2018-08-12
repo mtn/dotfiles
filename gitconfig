@@ -15,9 +15,11 @@
     p = pull
     pu = push
     l = log
+    d = diff
 [gpg]
     program = /usr/local/bin/gpg
 [commit]
     gpgsign = true
 [core]
     editor = vim
+	excludesfile = /Users/michaelnoronha/.gitignore

@@ -9,6 +9,7 @@
       Plug 'jiangmiao/auto-pairs'
       Plug 'AlessandroYorba/Alduin'
       Plug 'reedes/vim-pencil'
+      Plug 'ziglang/zig.vim'
 
       call plug#end()
 

@@ -13,6 +13,7 @@
     ~/.gitconfig: gitconfig
     ~/.eslintrc.json: eslintrc
     ~/.tmux.conf: tmux.conf
+    ~/.gitignore: gitignore
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
