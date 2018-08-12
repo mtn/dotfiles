@@ -2,10 +2,6 @@ scriptencoding utf-8
 set background=dark
 set showmode
 
-set cursorline
-set colorcolumn=90
-set number
-set relativenumber
 set linespace=0
 set showmatch
 
@@ -30,3 +26,11 @@ set nojoinspaces
 set splitright
 set splitbelow
 
+let mapleader = ','
+nnoremap <leader>d :bp<cr>
+nnoremap <leader>f :bn<cr>
+
+set pastetoggle=<leader>p
+noremap ; :
+noremap ;; ;
+nnoremap <leader>v <C-V>
