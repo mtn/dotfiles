@@ -10,6 +10,7 @@
       Plug 'AlessandroYorba/Alduin'
       Plug 'reedes/vim-pencil'
       Plug 'ziglang/zig.vim'
+      Plug 'ctrlpvim/ctrlp.vim'
 
       call plug#end()
 
@@ -173,4 +174,9 @@ au BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
         \ execute("normal `\"") |
     \ endif
+" }
+
+" Ctrlp
+" {
+let g:ctrlp_map = '<C-t>'
 " }

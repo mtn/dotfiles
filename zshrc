@@ -31,6 +31,9 @@ setopt EXTENDED_HISTORY
 
 plugins=(git zsh-directory-history zsh-syntax-highlighting)
 
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 source $ZSH/oh-my-zsh.sh
 
 alias cl='clear'
@@ -51,7 +54,7 @@ alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 
-alias uchi='cd $HOME/Documents/workspace/uchicago/second'
+alias uchi='cd $HOME/Documents/workspace/uchicago/third'
 alias csilm='mosh mnoronha@linux.cs.uchicago.edu'
 alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 alias saldep='ssh jsalavon@latentculture.com'
