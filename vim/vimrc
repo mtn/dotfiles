@@ -57,10 +57,6 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable
 set list
 
-let g:pencil#autoformat = 1
-let g:pencil#hardwrap = 1
-let g:pencil#textwidth = 80
-
 if has('mac')
     set wildignorecase
 endif
@@ -179,4 +175,16 @@ au BufReadPost *
 " Ctrlp
 " {
 let g:ctrlp_map = '<C-t>'
+" }
+
+" vim-pencil
+" {
+let g:pencil#autoformat = 1
+let g:pencil#hardwrap = 1
+let g:pencil#textwidth = 80
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
 " }
