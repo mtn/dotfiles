@@ -14,7 +14,7 @@
     chb = checkout -b
     p = pull
     pu = push
-    l = log
+    l = log --pretty=oneline --abbrev-commit --graph --decorate
     d = diff
 [gpg]
     program = /usr/local/bin/gpg

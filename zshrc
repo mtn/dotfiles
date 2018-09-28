@@ -73,15 +73,11 @@ alias q='exit'
 alias e='vim'
 alias c='cat'
 
-source /usr/local/bin/mkvenv
-source /usr/local/bin/workon
-source /usr/local/bin/rmvenv
-export PIP_REQUIRE_VIRTUALENV=false
-
 set -o vi
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PIP_REQUIRE_VIRTUALENV=false
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
