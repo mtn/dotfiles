@@ -36,6 +36,10 @@ bindkey '^R' history-incremental-search-backward
 
 source $ZSH/oh-my-zsh.sh
 
+function ccd() {
+  mkdir "$1" && cd "$1"
+}
+
 alias cl='clear'
 alias cls='clear; ls'
 
@@ -63,15 +67,14 @@ alias mlog='vim $HOME/Documents/workspace/log.txt'
 alias ideas='vim $HOME/Documents/workspace/ideas.txt'
 alias todo='vim todo.txt'
 
-alias mkt='pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
+# TODO rename the outfile for easy tabcompletion
+alias mkt='pdflatex *.tex && pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
 alias rip='echo "sad"'
 
-alias gid='git diff'
 alias gidc='git diff --cached'
 
 alias q='exit'
 alias e='vim'
-alias c='cat'
 
 set -o vi
 
@@ -86,3 +89,12 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
 export PATH="$HOME/go:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
+
+source /usr/local/bin/mkvenv
+source /usr/local/bin/workon
+source /usr/local/bin/rmvenv
+
+if [ -e /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh ];
+    then . /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh;
+fi # added by Nix installer
+

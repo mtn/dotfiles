@@ -76,7 +76,7 @@ endif
 
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 set tabstop=4
 set softtabstop=4
