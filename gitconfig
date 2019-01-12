@@ -16,6 +16,7 @@
     pu = push
     l = log --pretty=oneline --abbrev-commit --graph --decorate
     d = diff
+    dc = diff --cached
 ; TODO allow a commit has to be passed in
     fi = diff-tree --no-commit-id --name-only -r HEAD
 [gpg]

@@ -4,6 +4,7 @@
       Plug 'tpope/vim-commentary'
       Plug 'tpope/vim-surround'
       Plug 'tpope/vim-abolish'
+      Plug 'tpope/vim-fugitive'
       Plug 'w0rp/ale'
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
@@ -11,6 +12,9 @@
       Plug 'reedes/vim-pencil'
       Plug 'ziglang/zig.vim'
       Plug 'ctrlpvim/ctrlp.vim'
+      Plug 'luochen1990/rainbow'
+      Plug 'inside/vim-search-pulse'
+      Plug 'ambv/black', { 'on': 'Black' }
 
       call plug#end()
 
@@ -101,6 +105,16 @@ nnoremap <leader>d :bp<cr>
 nnoremap <leader>f :bn<cr>
 
 set pastetoggle=<leader>p
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
 
 autocmd FileType puppet,yml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType latex,tex,md,markdown,txt,text setlocal spell
@@ -188,3 +202,7 @@ augroup pencil
   autocmd FileType text         call pencil#init()
 augroup END
 " }
+"
+autocmd FileType python nnoremap <buffer> <C-l> :exec '!clear; python3' shellescape(@%, 1)<cr>
+autocmd FileType tex nnoremap <buffer> <C-l> :exec '!clear; pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) '&& rm *.log && rm *.aux && open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
+autocmd FileType javascript nnoremap <buffer> <C-l> :exec '!clear; node' shellescape(@%, 1)<cr>
