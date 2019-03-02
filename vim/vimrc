@@ -1,10 +1,11 @@
-" Dein {
+" vim plug {
     call plug#begin('~/.vim/plugged')
 
       Plug 'tpope/vim-commentary'
       Plug 'tpope/vim-surround'
       Plug 'tpope/vim-abolish'
       Plug 'tpope/vim-fugitive'
+      Plug 'tpope/vim-dispatch'
       Plug 'w0rp/ale'
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
@@ -14,11 +15,16 @@
       Plug 'ctrlpvim/ctrlp.vim'
       Plug 'luochen1990/rainbow'
       Plug 'inside/vim-search-pulse'
+      Plug 'airblade/vim-rooter'
+      Plug 'lervag/vimtex'
       Plug 'ambv/black', { 'on': 'Black' }
+
+      Plug '/Users/michaelnoronha/Documents/workspace/python/jupyter.vim/plugin/sample.vim'
 
       call plug#end()
 
     filetype plugin indent on
+    set omnifunc=syntaxcomplete#Complete
     syntax enable
 " }
 "
@@ -154,6 +160,11 @@ endif
     noremap <leader>t :ALEPreviousWrap<CR>
     let g:ale_linters = {'tex': [], 'haskell': [], 'html': [], 'c': ['gcc'], 'cpp': ['gcc'], 'python': ['pylint']}
     let g:ale_set_highlights = 0
+    let g:ale_enabled = 1
+    let g:ale_completion_enabled = 1
+    let g:ale_lint_on_save = 1
+" }
+
 " }
 
 if has('statusline')
@@ -202,7 +213,12 @@ augroup pencil
   autocmd FileType text         call pencil#init()
 augroup END
 " }
-"
+
 autocmd FileType python nnoremap <buffer> <C-l> :exec '!clear; python3' shellescape(@%, 1)<cr>
 autocmd FileType tex nnoremap <buffer> <C-l> :exec '!clear; pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) '&& rm *.log && rm *.aux && open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
 autocmd FileType javascript nnoremap <buffer> <C-l> :exec '!clear; node' shellescape(@%, 1)<cr>
+autocmd FileType c nnoremap <buffer> <C-l> :exec '!clear; gcc' shellescape(@%, 1) '&& ./a.out && rm a.out'<cr>
+autocmd FileType rust nnoremap <buffer> <C-l> :exec '!clear; cargo run'<cr>
+autocmd FileType rust nnoremap <buffer> <C-b> :exec '!clear; cargo test'<cr>
+autocmd FileType html nnoremap <buffer> <C-l> :exec '!open' shellescape(@%, 1)<cr>
+autocmd FileType markdown nnoremap <buffer> <C-l> :exec '!clear; mdcat' shellescape(@%, 1)<cr>

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/michaelnoronha/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="/Users/michaelnoronha/.local/bin:$HOME/Library/Haskell/bin:$HOME/.cargo/bin:$PATH"
 
@@ -60,7 +60,6 @@ alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 
 alias uchi='cd $HOME/Documents/workspace/uchicago/third'
 alias csilm='mosh mnoronha@linux1.cs.uchicago.edu'
-alias csils='ssh mnoronha@linux.cs.uchicago.edu'
 alias saldep='ssh jsalavon@latentculture.com'
 
 alias mlog='vim $HOME/Documents/workspace/log.txt'
@@ -116,3 +115,5 @@ fzf-binary-widget() {
 zle     -N   fzf-binary-widget
 # bind to Control-h, change this if you want a different key
 bindkey '^H' fzf-binary-widget
+
+eval "$(pyenv init -)"
