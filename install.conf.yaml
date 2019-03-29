@@ -14,6 +14,7 @@
     ~/.eslintrc.json: eslintrc
     ~/.tmux.conf: tmux.conf
     ~/.gitignore: gitignore
+    ~/.config/nvim/init.vim: nvim/init.vim
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

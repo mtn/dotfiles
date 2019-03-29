@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="/Users/michaelnoronha/.local/bin:$HOME/Library/Haskell/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/Library/Haskell/bin:$HOME/.cargo/bin:$PATH"
 
 export PATH="/Library/Frameworks/R.framework/Resources/bin:$PATH"
 
@@ -51,12 +51,14 @@ alias worb='cd $HOME/Documents/workspace/ruby'
 alias woha='cd $HOME/Documents/workspace/haskell'
 alias wopy='cd $HOME/Documents/workspace/python'
 alias wojs='cd $HOME/Documents/workspace/js'
+alias woml='cd $HOME/Documents/workspace/ml-toybox'
 
 alias vimspell='vim $HOME/.vim/spell/en.utf-8.add'
 
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
+alias nvimrc='vim $HOME/dotfiles/nvim/init.vim'
 
 alias uchi='cd $HOME/Documents/workspace/uchicago/third'
 alias csilm='mosh mnoronha@linux1.cs.uchicago.edu'
@@ -72,7 +74,14 @@ alias mkt='pdflatex *.tex && pdflatex *.tex && rm *.log && rm *.aux && open *.pd
 alias gidc='git diff --cached'
 
 alias q='exit'
-alias e='vim'
+
+if ! type nvim > /dev/null; then
+  alias e='vim'
+else
+  alias e='nvim'
+fi
+
+alias fmtjson='python -mjson.tool'
 
 set -o vi
 
@@ -88,9 +97,13 @@ export PATH="$HOME/go:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
+autoload bashcompinit
+bashcompinit
+
 source /usr/local/bin/mkvenv
 source /usr/local/bin/workon
 source /usr/local/bin/rmvenv
+source /usr/local/bin/venv-completions
 
 # if [ -e /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh ];
 #     then . /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh;
