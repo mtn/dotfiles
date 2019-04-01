@@ -26,3 +26,5 @@
 [core]
     editor = vim
 	excludesfile = /Users/michaelnoronha/.gitignore
+[github]
+	user = mtn

@@ -58,7 +58,7 @@ alias vimspell='vim $HOME/.vim/spell/en.utf-8.add'
 alias dot='cd $HOME/dotfiles'
 alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
-alias nvimrc='vim $HOME/dotfiles/nvim/init.vim'
+alias nvimrc='nvim $HOME/dotfiles/nvim/init.vim'
 
 alias uchi='cd $HOME/Documents/workspace/uchicago/third'
 alias csilm='mosh mnoronha@linux1.cs.uchicago.edu'
@@ -130,3 +130,6 @@ zle     -N   fzf-binary-widget
 bindkey '^H' fzf-binary-widget
 
 eval "$(pyenv init -)"
+export MPLBACKEND="module://itermplot"
+export ITERMPLOT=rv
+

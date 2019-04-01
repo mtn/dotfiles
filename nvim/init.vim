@@ -1,5 +1,5 @@
 " vim plug {
-    call plug#begin('~/.vim/plugged')
+    call plug#begin('~/.local/share/nvim/plugged')
 
       Plug 'tpope/vim-commentary'
       Plug 'tpope/vim-surround'
@@ -10,17 +10,23 @@
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
       Plug 'AlessandroYorba/Alduin'
-      Plug 'reedes/vim-pencil'
+      " Plug 'reedes/vim-pencil'
       Plug 'ziglang/zig.vim'
       Plug 'ctrlpvim/ctrlp.vim'
       Plug 'luochen1990/rainbow'
       Plug 'inside/vim-search-pulse'
       Plug 'airblade/vim-rooter'
       Plug 'lervag/vimtex'
+      Plug 'mattn/webapi-vim'
+      Plug 'mattn/gist-vim'
       Plug 'ambv/black', { 'on': 'Black' }
+      " Plug 'bfredl/nvim-ipy'
+      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+      Plug 'Shougo/deoplete-clangx'
+      Plug 'racer-rust/vim-racer'
+      Plug 'deoplete-plugins/deoplete-jedi'
 
-      Plug '/Users/michaelnoronha/Documents/workspace/python/misc/jupyterkernel.vim'
-      " Plug '/Users/michaelnoronha/Documents/workspace/python/jupyter.vim/plugin/sample.vim'
+      Plug '/Users/michaelnoronha/Documents/workspace/vim/nvim-ipy'
 
       call plug#end()
 
@@ -212,14 +218,14 @@ let g:ctrlp_map = '<C-t>'
 
 " vim-pencil
 " {
-let g:pencil#autoformat = 1
-let g:pencil#hardwrap = 1
-let g:pencil#textwidth = 80
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
-  augroup END
+" let g:pencil#autoformat = 1
+" let g:pencil#hardwrap = 1
+" let g:pencil#textwidth = 80
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"   autocmd FileType text         call pencil#init()
+"   augroup END
 " }
 
 " vim-rooter
@@ -228,12 +234,26 @@ let g:rooter_patterns = ['Cargo.toml', '.git/']
 let g:rooter_silent_chdir = 1
 " }
 
+" gist-vim
+" {
+if has('macunix')
+  let g:gist_clip_command = 'pbcopy'
+endif
+let g:gist_post_private = 1
+" }
 
-autocmd FileType python nnoremap <buffer> <C-l> :exec '!clear; python3' shellescape(@%, 1)<cr>
-autocmd FileType tex nnoremap <buffer> <C-l> :exec '!clear; pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) '&& rm *.log && rm *.aux && open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
-autocmd FileType javascript nnoremap <buffer> <C-l> :exec '!clear; node' shellescape(@%, 1)<cr>
-autocmd FileType c nnoremap <buffer> <C-l> :exec '!clear; gcc' shellescape(@%, 1) '&& ./a.out && rm a.out'<cr>
-autocmd FileType rust nnoremap <buffer> <C-l> :exec '!clear; cargo run'<cr>
-autocmd FileType rust nnoremap <buffer> <C-b> :exec '!clear; cargo test'<cr>
+" deoplete
+" {
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" }
+
+
+autocmd FileType python nnoremap <buffer> <C-l> :exec '!python3' shellescape(@%, 1)<cr>
+autocmd FileType tex nnoremap <buffer> <C-l> :exec '! pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) '&& rm *.log && rm *.aux && open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
+autocmd FileType javascript nnoremap <buffer> <C-l> :exec '!node' shellescape(@%, 1)<cr>
+autocmd FileType c nnoremap <buffer> <C-l> :exec '!gcc' shellescape(@%, 1) '&& ./a.out && rm a.out'<cr>
+autocmd FileType rust nnoremap <buffer> <C-l> :exec '!cargo run'<cr>
+autocmd FileType rust nnoremap <buffer> <C-b> :exec '!cargo test'<cr>
 autocmd FileType html nnoremap <buffer> <C-l> :exec '!open' shellescape(@%, 1)<cr>
-autocmd FileType markdown nnoremap <buffer> <C-l> :exec '!clear; mdcat' shellescape(@%, 1)<cr>
+autocmd FileType markdown nnoremap <buffer> <C-l> :exec '!mdcat' shellescape(@%, 1)<cr>
