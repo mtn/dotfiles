@@ -21,10 +21,10 @@
       Plug 'mattn/gist-vim'
       Plug 'ambv/black', { 'on': 'Black' }
       " Plug 'bfredl/nvim-ipy'
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-      Plug 'Shougo/deoplete-clangx'
-      Plug 'racer-rust/vim-racer'
-      Plug 'deoplete-plugins/deoplete-jedi'
+      " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+      " Plug 'Shougo/deoplete-clangx'
+      " Plug 'racer-rust/vim-racer'
+      " Plug 'deoplete-plugins/deoplete-jedi'
 
       Plug '/Users/michaelnoronha/Documents/workspace/vim/nvim-ipy'
 
