@@ -15,6 +15,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.gitignore: gitignore
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.bashrc: bashrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
