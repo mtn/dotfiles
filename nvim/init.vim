@@ -10,16 +10,19 @@
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
       Plug 'AlessandroYorba/Alduin'
-      " Plug 'reedes/vim-pencil'
+      Plug 'AlessandroYorba/Despacio'
+      Plug 'reedes/vim-pencil'
       Plug 'ziglang/zig.vim'
+      Plug 'keith/swift.vim'
       Plug 'ctrlpvim/ctrlp.vim'
       Plug 'luochen1990/rainbow'
       Plug 'inside/vim-search-pulse'
-      Plug 'airblade/vim-rooter'
+      " Plug 'airblade/vim-rooter'
       Plug 'lervag/vimtex'
       Plug 'mattn/webapi-vim'
       Plug 'mattn/gist-vim'
       Plug 'ambv/black', { 'on': 'Black' }
+      Plug 'nightsense/cosmic_latte'
       " Plug 'bfredl/nvim-ipy'
       " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
       " Plug 'Shougo/deoplete-clangx'
@@ -143,7 +146,11 @@ set splitright
 set splitbelow
 
 " Alduin {
-    color alduin
+  " set background=light
+  " colorscheme cosmic_latte
+  colorscheme despacio
+  " color alduin
+  set background=dark
 " }
 
 highlight clear SignColumn      " SignColumn should match background
@@ -218,20 +225,20 @@ let g:ctrlp_map = '<C-t>'
 
 " vim-pencil
 " {
-" let g:pencil#autoformat = 1
-" let g:pencil#hardwrap = 1
-" let g:pencil#textwidth = 80
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd call pencil#init()
-"   autocmd FileType text         call pencil#init()
-"   augroup END
+let g:pencil#autoformat = 1
+let g:pencil#hardwrap = 1
+let g:pencil#textwidth = 80
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+  augroup END
 " }
 
 " vim-rooter
 " {
-let g:rooter_patterns = ['Cargo.toml', '.git/']
-let g:rooter_silent_chdir = 1
+" let g:rooter_patterns = ['Cargo.toml', '.git/']
+" let g:rooter_silent_chdir = 1
 " }
 
 " gist-vim
@@ -250,7 +257,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 autocmd FileType python nnoremap <buffer> <C-l> :exec '!python3' shellescape(@%, 1)<cr>
-autocmd FileType tex nnoremap <buffer> <C-l> :exec '! pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) '&& rm *.log && rm *.aux && open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
+autocmd FileType tex nnoremap <buffer> <C-l> :exec '! pdflatex' shellescape(@%, 1) '; pdflatex' shellescape(@%, 1) '; rm *.log ; rm *.aux; rm *.out; open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
 autocmd FileType javascript nnoremap <buffer> <C-l> :exec '!node' shellescape(@%, 1)<cr>
 autocmd FileType c nnoremap <buffer> <C-l> :exec '!gcc' shellescape(@%, 1) '&& ./a.out && rm a.out'<cr>
 autocmd FileType rust nnoremap <buffer> <C-l> :exec '!cargo run'<cr>

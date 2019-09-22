@@ -10,7 +10,9 @@
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
       Plug 'AlessandroYorba/Alduin'
+      Plug 'AlessandroYorba/Despacio'
       Plug 'reedes/vim-pencil'
+      Plug 'keith/swift.vim'
       Plug 'ziglang/zig.vim'
       Plug 'ctrlpvim/ctrlp.vim'
       Plug 'luochen1990/rainbow'
@@ -87,7 +89,7 @@ endif
 
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -130,7 +132,8 @@ set splitright
 set splitbelow
 
 " Alduin {
-    color alduin
+    colorscheme despacio
+    " color alduin
 " }
 
 highlight clear SignColumn      " SignColumn should match background
@@ -223,7 +226,7 @@ let g:rooter_silent_chdir = 1
 
 
 autocmd FileType python nnoremap <buffer> <C-l> :exec '!clear; python3' shellescape(@%, 1)<cr>
-autocmd FileType tex nnoremap <buffer> <C-l> :exec '!clear; pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) '&& rm *.log && rm *.aux && open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>
+autocmd FileType tex nnoremap <buffer> <C-l> :exec '!clear; pdflatex' shellescape(@%, 1) '&& pdflatex' shellescape(@%, 1) ' && open' shellescape(@%, 1)[1:-5] . 'pdf' && rm -f *.log && rm -f *.aux && rm -f *.out<cr>
 autocmd FileType javascript nnoremap <buffer> <C-l> :exec '!clear; node' shellescape(@%, 1)<cr>
 autocmd FileType c nnoremap <buffer> <C-l> :exec '!clear; gcc' shellescape(@%, 1) '&& ./a.out && rm a.out'<cr>
 autocmd FileType rust nnoremap <buffer> <C-l> :exec '!clear; cargo run'<cr>

@@ -11,7 +11,7 @@
     cl = clone
     rh = reset --hard
     ch = checkout
-    chb = checkout -b
+    chp = cherry-pick
     p = pull
     pu = push
     l = log --pretty=oneline --abbrev-commit --graph --decorate

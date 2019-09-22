@@ -54,9 +54,10 @@ alias wojs='cd $HOME/Documents/workspace/js'
 alias woml='cd $HOME/Documents/workspace/ml-toybox'
 
 alias vimspell='vim $HOME/.vim/spell/en.utf-8.add'
+alias nvimspell='nvim $HOME/.vim/spell/en.utf-8.add'
 
 alias dot='cd $HOME/dotfiles'
-alias zshrc='vim $HOME/dotfiles/zshrc && source ~/.zshrc'
+alias zshrc='nvim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 alias nvimrc='nvim $HOME/dotfiles/nvim/init.vim'
 
@@ -64,9 +65,9 @@ alias uchi='cd $HOME/Documents/workspace/uchicago/third'
 alias csilm='mosh mnoronha@linux1.cs.uchicago.edu'
 alias saldep='ssh jsalavon@latentculture.com'
 
-alias mlog='vim $HOME/Documents/workspace/log.txt'
-alias ideas='vim $HOME/Documents/workspace/ideas.txt'
-alias todo='vim todo.txt'
+alias mlog='nvim $HOME/Documents/workspace/log.txt'
+alias ideas='nvim $HOME/Documents/workspace/ideas.txt'
+alias todo='nvim todo.txt'
 
 # TODO rename the outfile for easy tabcompletion
 alias mkt='pdflatex *.tex && pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
@@ -105,9 +106,9 @@ source /usr/local/bin/workon
 source /usr/local/bin/rmvenv
 source /usr/local/bin/venv-completions
 
-# if [ -e /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh ];
-#     then . /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh;
-# fi # added by Nix installer
+if [ -e /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh ];
+    then . /Users/michaelnoronha/.nix-profile/etc/profile.d/nix.sh;
+fi # added by Nix installer
 #
 fzf-binary-widget() {
   selected=( $( whence -pm '*' | \
@@ -130,6 +131,5 @@ zle     -N   fzf-binary-widget
 bindkey '^H' fzf-binary-widget
 
 eval "$(pyenv init -)"
-export MPLBACKEND="module://itermplot"
-export ITERMPLOT=rv
+unset MPLBACKEND
 
