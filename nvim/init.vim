@@ -6,6 +6,7 @@
       Plug 'tpope/vim-abolish'
       Plug 'tpope/vim-fugitive'
       Plug 'tpope/vim-dispatch'
+      Plug 'preservim/nerdtree'
       Plug 'w0rp/ale'
       Plug 'ap/vim-buftabline'
       Plug 'jiangmiao/auto-pairs'
@@ -17,11 +18,15 @@
       Plug 'ctrlpvim/ctrlp.vim'
       Plug 'luochen1990/rainbow'
       Plug 'inside/vim-search-pulse'
+      Plug 'ludovicchabant/vim-gutentags'
+      Plug 'numirias/semshi'
       " Plug 'airblade/vim-rooter'
       Plug 'lervag/vimtex'
       Plug 'mattn/webapi-vim'
       Plug 'mattn/gist-vim'
       Plug 'ambv/black', { 'on': 'Black' }
+      Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
       Plug 'nightsense/cosmic_latte'
       " Plug 'bfredl/nvim-ipy'
       " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -97,9 +102,7 @@ set listchars=trail:•,tab:›\ ,extends:#,nbsp:. " Whitespace, etc.
 "     endif
 " endif
 
-if $TMUX == ''
-    set clipboard+=unnamed,unnamedplus
-endif
+set clipboard+=unnamed,unnamedplus
 
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
@@ -220,7 +223,9 @@ au BufReadPost *
 
 " Ctrlp
 " {
-let g:ctrlp_map = '<C-t>'
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+map <leader>q :CtrlPTag<CR>
 " }
 
 " vim-pencil
@@ -255,6 +260,34 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " }
 
+" gutentags
+" {
+let g:gutentags_cache_dir = expand('~/.cache/tags/')
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_extra_args = [
+      \ '--tag-relative=yes',
+      \ '--fields=+ailmnS',
+      \ ]
+" }
+
+" nerdtree
+" {
+map <C-n> :NERDTreeToggle<CR>
+" }
+
+" coc
+" {
+set updatetime=300
+set shortmess+=c
+"}
+
+" semshi
+" {
+let g:semshi#update_delay_factor = 0.0001
+" }
 
 autocmd FileType python nnoremap <buffer> <C-l> :exec '!python3' shellescape(@%, 1)<cr>
 autocmd FileType tex nnoremap <buffer> <C-l> :exec '! pdflatex' shellescape(@%, 1) '; pdflatex' shellescape(@%, 1) '; rm *.log ; rm *.aux; rm *.out; open' shellescape(@%, 1)[1:-5] . 'pdf'<cr>

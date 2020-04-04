@@ -6,6 +6,7 @@
 [alias]
     st = status
     co = commit -m
+    ca = commit --amend
     al = add -u
     aa = add -A
     cl = clone

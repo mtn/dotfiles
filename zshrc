@@ -66,8 +66,11 @@ alias csilm='mosh mnoronha@linux1.cs.uchicago.edu'
 alias saldep='ssh jsalavon@latentculture.com'
 
 alias mlog='nvim $HOME/Documents/workspace/log.txt'
-alias ideas='nvim $HOME/Documents/workspace/ideas.txt'
+alias idea='nvim $HOME/Documents/workspace/ideas.txt'
 alias todo='nvim todo.txt'
+alias reading='nvim $HOME/Documents/workspace/reading.txt'
+alias questions='nvim $HOME/Documents/workspace/questions.txt'
+alias social='nvim $HOME/Documents/workspace/social.txt'
 
 # TODO rename the outfile for easy tabcompletion
 alias mkt='pdflatex *.tex && pdflatex *.tex && rm *.log && rm *.aux && open *.pdf'
@@ -129,7 +132,3 @@ fzf-binary-widget() {
 zle     -N   fzf-binary-widget
 # bind to Control-h, change this if you want a different key
 bindkey '^H' fzf-binary-widget
-
-eval "$(pyenv init -)"
-unset MPLBACKEND
-
