@@ -262,6 +262,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " gutentags
 " {
+let g:gutentags_project_root = ['.root', '.git']
 let g:gutentags_cache_dir = expand('~/.cache/tags/')
 let g:gutentags_generate_on_new = 1
 let g:gutentags_generate_on_missing = 1

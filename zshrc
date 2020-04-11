@@ -61,7 +61,7 @@ alias zshrc='nvim $HOME/dotfiles/zshrc && source ~/.zshrc'
 alias vimrc='vim $HOME/dotfiles/vim/vimrc'
 alias nvimrc='nvim $HOME/dotfiles/nvim/init.vim'
 
-alias uchi='cd $HOME/Documents/workspace/uchicago/third'
+alias uchi='cd $HOME/Documents/workspace/uchicago/fourth'
 alias csilm='mosh mnoronha@linux1.cs.uchicago.edu'
 alias saldep='ssh jsalavon@latentculture.com'
 
