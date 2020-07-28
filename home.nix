@@ -7,6 +7,10 @@
   programs.bash = {
     enable = true;
 
+    bashrcExtra = ''
+      set -o vi
+    '';
+
     shellAliases = {
       cl = "clear";
       wo = "cd $HOME/Documents/workspace";
@@ -270,6 +274,7 @@
       " {
       set updatetime=300
       set shortmess+=c
+      inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
       "}
 
       " semshi
